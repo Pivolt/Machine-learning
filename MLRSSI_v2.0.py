@@ -14,6 +14,10 @@ with open('D:\\MachineLearning\\baza_pozycji.json') as f:
 df = pd.json_normalize(data, record_path=['skan'], meta=['XY'])
 df = pd.concat([df.drop(columns=['XY']), pd.json_normalize(df['XY']).astype(float)], axis=1)
 
+#TO DO: Edit the way data is stored in the data frame
+#so that instead of one XY pair having one RSSI scan
+#it has a series of scans like in the json file
+
 # rows = []
 # for entry in data:
 #     xy = entry['XY']
